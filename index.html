@@ -55,57 +55,7 @@
 <body>
 
   <iframe
-    src="https://cloud.protopie.io/p/3fde3be604f8fc00d4794d34?ui=true&scaleToFit=false&enableHotspotHints=false&cursorType=touch&mockup=true&bgColor=%23F5F5F5&bgImage=undefined&playSpeed=1">
+    src="https://cloud.protopie.io/p/84fe1e98126af18bc399a679?ui=false&scaleToFit=true&enableHotspotHints=false&cursorType=touch&mockup=true&bgColor=%23F5F5F5&bgImage=undefined&playSpeed=1">
   </iframe>
 
-  <div id="privacyShield" aria-hidden="true">
-    <img src="privacy.png" alt="Service NSW Privacy Screen">
-  </div>
-
-  <script>
-    const shield = document.getElementById('privacyShield');
-
-    function showShield() {
-      shield.classList.add('show');
-      shield.setAttribute('aria-hidden', 'false');
-    }
-
-    function hideShield() {
-      shield.classList.remove('show');
-      shield.setAttribute('aria-hidden', 'true');
-    }
-
-    // Arm privacy logic only after page has fully settled
-    let armed = false;
-    window.addEventListener('load', () => {
-      setTimeout(() => { armed = true; }, 1200);
-    });
-
-    // Show ONLY when page is actually backgrounded
-    document.addEventListener('visibilitychange', () => {
-      if (!armed) return;
-      if (document.hidden) {
-        showShield();
-      } else {
-        hideShield();
-      }
-    });
-
-    // iOS reliable lifecycle events
-    window.addEventListener('pagehide', () => {
-      if (!armed) return;
-      showShield();
-    });
-
-    window.addEventListener('pageshow', () => {
-      if (!armed) return;
-      hideShield();
-    });
-
-    // Ensure hidden on first render
-    hideShield();
-  </script>
-
-</body>
-</html>
-
+ 
